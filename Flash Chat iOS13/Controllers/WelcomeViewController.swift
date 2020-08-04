@@ -14,7 +14,16 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
+        titleLabel.text = ""
+        var charIndex = 0
+        let titleTest = K.appName
+        for letter in titleTest {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * Double(charIndex), repeats: false) { (timer) in
+                self.titleLabel.text?.append(letter)
+            }
+            charIndex += 1
+        }
        
     }
     
